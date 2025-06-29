@@ -1,0 +1,293 @@
+/* Estilos específicos de la aplicación Metro CDMX */
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Contenedor principal */
+.app-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mejoras en la barra de navegación */
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Contenedor de contenido principal */
+.main-content {
+  flex: 1;
+  padding: 2rem 0;
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  min-height: calc(100vh - 64px);
+}
+
+/* Mejoras en el contenedor de Material-UI */
+.MuiContainer-root {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Estilos para secciones de página */
+.page-section {
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.page-section:last-child {
+  margin-bottom: 0;
+}
+
+/* Mejoras en tarjetas */
+.enhanced-card {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, rgba(255, 255, 255, 0.95) 100%);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.enhanced-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-heavy);
+}
+
+/* Estilos para el mapa */
+.map-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-medium);
+}
+
+.map-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 8px 12px;
+  border-radius: var(--border-radius-small);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+/* Estilos para formularios */
+.form-container {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-medium);
+}
+
+.form-section {
+  margin-bottom: 1.5rem;
+}
+
+.form-section:last-child {
+  margin-bottom: 0;
+}
+
+/* Estilos para resultados */
+.result-card {
+  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+  border-left: 4px solid var(--success-color);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-top: 1rem;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.result-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.result-item:last-child {
+  margin-bottom: 0;
+}
+
+.result-icon {
+  margin-right: 0.75rem;
+  color: var(--success-color);
+}
+
+/* Estilos para consejos */
+.tip-card {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%);
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  border-left: 4px solid var(--primary-color);
+}
+
+.tip-card:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.tip-content {
+  padding: 1.5rem;
+}
+
+/* Estilos para botones especiales */
+.primary-button {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-small);
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-light);
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+}
+
+.primary-button:active {
+  transform: translateY(0);
+}
+
+.primary-button:disabled {
+  background: var(--text-disabled);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Estilos para iconos */
+.icon-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+  color: white;
+  margin-right: 1rem;
+  box-shadow: var(--shadow-light);
+}
+
+/* Estilos para badges */
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-primary {
+  background: var(--primary-color);
+  color: white;
+}
+
+.badge-success {
+  background: var(--success-color);
+  color: white;
+}
+
+.badge-warning {
+  background: var(--warning-color);
+  color: white;
+}
+
+/* Estilos para loading */
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 200px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--bg-tertiary);
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estilos para responsive */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem 0;
+  }
+
+  .form-container {
+    padding: 1.5rem;
+  }
+
+  .result-card {
+    padding: 1rem;
+  }
+
+  .tip-content {
+    padding: 1rem;
+  }
+
+  .primary-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 0.5rem 0;
+  }
+
+  .form-container {
+    padding: 1rem;
+  }
+
+  .icon-container {
+    width: 32px;
+    height: 32px;
+    margin-right: 0.75rem;
+  }
+}

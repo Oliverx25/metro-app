@@ -1,0 +1,401 @@
+:root {
+  /* Paleta de colores moderna para Metro CDMX */
+  --primary-color: #1976d2;
+  --primary-light: #42a5f5;
+  --primary-dark: #1565c0;
+  --secondary-color: #dc004e;
+  --accent-color: #ff9800;
+  --success-color: #4caf50;
+  --warning-color: #ff9800;
+  --error-color: #f44336;
+
+  /* Colores de fondo */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e3f2fd;
+
+  /* Colores de texto */
+  --text-primary: #212121;
+  --text-secondary: #757575;
+  --text-disabled: #bdbdbd;
+
+  /* Sombras */
+  --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.15);
+  --shadow-heavy: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+  /* Bordes */
+  --border-radius: 12px;
+  --border-radius-small: 8px;
+
+  /* Transiciones */
+  --transition-fast: 0.2s ease-in-out;
+  --transition-medium: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
+
+  font-family: 'Inter', 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color-scheme: light;
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Importar fuentes modernas */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Mejoras en enlaces */
+a {
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  /* color: var(--primary-dark); */
+  text-decoration: underline;
+}
+
+/* Mejoras en botones */
+button {
+  border-radius: var(--border-radius-small);
+  border: 1px solid transparent;
+  padding: 0.75em 1.5em;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: var(--shadow-light);
+}
+
+button:hover {
+  background-color: var(--primary-dark);
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-1px);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 2px solid var(--primary-light);
+  outline-offset: 2px;
+}
+
+button:disabled {
+  background-color: var(--text-disabled);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Mejoras en títulos */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 1rem 0;
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+}
+
+/* Mejoras en Leaflet (mapa) */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-medium);
+  transition: var(--transition-medium);
+}
+
+.leaflet-container:hover {
+  box-shadow: var(--shadow-heavy);
+}
+
+/* Mejoras en Material-UI */
+.MuiAppBar-root {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%) !important;
+  box-shadow: var(--shadow-medium) !important;
+  backdrop-filter: blur(10px);
+}
+
+.MuiPaper-root {
+  border-radius: var(--border-radius) !important;
+  transition: var(--transition-medium);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.MuiPaper-root:hover {
+  box-shadow: var(--shadow-medium) !important;
+  transform: translateY(-2px);
+}
+
+.MuiTextField-root {
+  margin-bottom: 1.5rem !important;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root {
+  border-radius: var(--border-radius-small);
+  transition: var(--transition-fast);
+}
+
+.MuiTextField-root .MuiOutlinedInput-root:hover {
+  box-shadow: var(--shadow-light);
+}
+
+.MuiTextField-root .MuiOutlinedInput-root.Mui-focused {
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+}
+
+.MuiButton-contained {
+  text-transform: none !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  border-radius: var(--border-radius-small) !important;
+  padding: 12px 24px !important;
+  transition: var(--transition-fast) !important;
+  box-shadow: var(--shadow-light) !important;
+}
+
+.MuiButton-contained:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-medium) !important;
+}
+
+.MuiButton-contained:active {
+  transform: translateY(0) !important;
+}
+
+.MuiButton-outlined {
+  border-radius: var(--border-radius-small) !important;
+  font-weight: 600 !important;
+  transition: var(--transition-fast) !important;
+}
+
+.MuiButton-outlined:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: var(--shadow-light) !important;
+}
+
+/* Mejoras en responsive */
+@media (max-width: 768px) {
+  .MuiTypography-h4 {
+    font-size: 1.75rem !important;
+  }
+
+  .MuiTypography-h5 {
+    font-size: 1.5rem !important;
+  }
+
+  .MuiTypography-h6 {
+    font-size: 1.25rem !important;
+  }
+
+  .MuiContainer-root {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .MuiPaper-root {
+    padding: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .MuiTypography-h4 {
+    font-size: 1.5rem !important;
+  }
+
+  .MuiButton-contained {
+    padding: 10px 20px !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  border-radius: 5px;
+  border: 2px solid var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Clases de animación */
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.5s ease-out forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Mejoras específicas para componentes */
+.route-result {
+  animation: fadeInUp 0.4s ease-out forwards;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%);
+  border-left: 4px solid var(--success-color);
+}
+
+.MuiListItem-root {
+  padding: 20px 24px !important;
+  transition: var(--transition-fast);
+  border-radius: var(--border-radius-small);
+  margin-bottom: 8px;
+}
+
+.MuiListItem-root:hover {
+  background-color: var(--bg-tertiary);
+  transform: translateX(4px);
+}
+
+.MuiDivider-root {
+  margin: 12px 0 !important;
+  opacity: 0.3;
+}
+
+/* Mejoras en alertas */
+.MuiAlert-root {
+  border-radius: var(--border-radius-small) !important;
+  font-weight: 500 !important;
+}
+
+.MuiAlert-standardSuccess {
+  background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+  border-left: 4px solid var(--success-color);
+}
+
+.MuiAlert-standardError {
+  background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+  border-left: 4px solid var(--error-color);
+}
+
+.MuiAlert-standardWarning {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffcc02 100%);
+  border-left: 4px solid var(--warning-color);
+}
+
+/* Mejoras en menús */
+.MuiMenuItem-root {
+  border-radius: var(--border-radius-small) !important;
+  margin: 2px 8px !important;
+  transition: var(--transition-fast) !important;
+}
+
+.MuiMenuItem-root:hover {
+  background-color: var(--bg-tertiary) !important;
+  transform: translateX(4px) !important;
+}
+
+/* Efectos de hover mejorados */
+.hover-lift {
+  transition: var(--transition-medium);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-heavy);
+}
+
+/* Gradientes de fondo para secciones */
+.gradient-bg {
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.gradient-bg-alt {
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-primary) 100%);
+}
